@@ -79,15 +79,27 @@ namespace MathGame
             var userAnswerString = Console.ReadLine();
             var userAnswer = int.Parse(userAnswerString);
 
-
+         
             if (userAnswer == correctAnswer)
             {
-                Console.WriteLine("Correct Answer! :-) ");
+                Console.WriteLine("------------------------");
+                Console.WriteLine("   Correct Answer! :-) ");
+                Console.WriteLine("------------------------");
+                Console.WriteLine("\n");
+                Console.WriteLine("Would you like to play again? ");
+                
+                PlayGame();
             }
 
             else if (userAnswer != correctAnswer)
             {
-                Console.WriteLine("Wrong Answer! :-( ");
+                Console.WriteLine("----------------------");
+                Console.WriteLine("   Wrong Answer! :-( ");
+                Console.WriteLine("----------------------");
+                Console.WriteLine("\n");
+                Console.WriteLine("Would you like to play again? ");
+                
+                PlayGame();
             }
             
         }
