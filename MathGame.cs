@@ -42,37 +42,50 @@ namespace MathGame
 
             // Takes user input, and outputs a question with the operator choosen.
             int correctAnswer = 0;
-            if (userchoice.Trim().ToLower() == "a")
+            switch (userchoice.Trim().ToLower())
             {
-                Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("                     Here is your question! ");
-                Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine($"                            {number1} + {number2}");
-                correctAnswer = Solve.Addition(number1, number2);
-            }
-            else if (userchoice.Trim().ToLower() == "s")
-            {
-                Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("                     Here is your question! ");
-                Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine($"                            {number1} - {number2}");
-                correctAnswer = Solve.Subtraction(number1, number2);
-            }
-            else if (userchoice.Trim().ToLower() == "m")
-            {
-                Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("                     Here is your question! ");
-                Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine($"                            {number1} * {number2}");
-                correctAnswer = Solve.Multiplication(number1, number2);
-            }
-            else if (userchoice.Trim().ToLower() == "d")
-            {
-                Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("                     Here is your question! ");
-                Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine($"                            {number1} / {number2}");
-                correctAnswer = Solve.Division(number1, number2);
+                case "a":
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine("                     Here is your question! ");
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine($"                            {number1} + {number2}");
+                    correctAnswer = Solve.Addition(number1, number2);
+                    break;
+
+
+                case "s":
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine("                     Here is your question! ");
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine($"                            {number1} - {number2}");
+                    correctAnswer = Solve.Subtraction(number1, number2);
+                    break;
+
+
+                case "m":
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine("                     Here is your question! ");
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine($"                            {number1} * {number2}");
+                    correctAnswer = Solve.Multiplication(number1, number2);
+                    break;
+
+
+                case "d":
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine("                     Here is your question! ");
+                    Console.WriteLine("-----------------------------------------------------------");
+                    Console.WriteLine($"                            {number1} / {number2}");
+                    correctAnswer = Solve.Division(number1, number2);
+                    break;
+                case "q":
+                    Console.WriteLine("Goodbye! Thank you for playing.");
+                    Environment.Exit(1);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input:");
+                    Environment.Exit(1);
+                    break;
             }
 
             Console.WriteLine("Enter your answer below! ");
