@@ -24,6 +24,7 @@ namespace MathGame
                 Console.WriteLine(" Please enter your choice out of the operators given below ");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("\n" +
+                    "V - Your Games\n" +
                     "A - Addition\n" +
                     "S - Subtraction\n" +
                     "M - Multiplication\n" +
@@ -36,6 +37,10 @@ namespace MathGame
 
                 switch (userchoice.Trim().ToLower())
                 {
+                    case "v":
+                        Helpers.GetGames();
+                        break;
+
                     case "a":
                         MenuMethods.AdditionGame("Addition Game");
                         break;
@@ -50,7 +55,6 @@ namespace MathGame
                         MenuMethods.MultiplicationGame("Multiplication Game");
                         break;
 
-
                     case "d":
                         MenuMethods.DivisionGame("Division Game");
                         break;
@@ -59,9 +63,7 @@ namespace MathGame
                         isGameOn = false;
                         Environment.Exit(1);
                         break;
-                    default:
-                        Console.WriteLine("Invalid Input:");
-                        break;
+                    
                 }
                
             }

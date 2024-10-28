@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace MathGame
 {
+
     public class MenuMethods
     {
-
+        
         public static string GetName()
         {
             // Reads the users name to start the game. 
@@ -77,6 +78,10 @@ namespace MathGame
 
             }
 
+            Helpers.AddToHistory(score, "Addition");
+            
+
+
         }
         public static void SubtractionGame(string message)
         {
@@ -133,7 +138,9 @@ namespace MathGame
                     Console.WriteLine("Press any key to go back to the main menu. :)");
                     Console.ReadLine();
                 }
+                
             }
+            Helpers.AddToHistory(score, "Subtraction");
         }
         public static void MultiplicationGame(string message)
         {
@@ -193,6 +200,7 @@ namespace MathGame
 
             }
 
+            Helpers.AddToHistory(score, "Multiply");
 
         }
         public static void DivisionGame(string message) 
@@ -258,6 +266,8 @@ namespace MathGame
 
 
             }
+
+            Helpers.AddToHistory(score, "Division");
 
 
         }
