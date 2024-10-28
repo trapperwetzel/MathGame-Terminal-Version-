@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MathGame
+namespace MathGameFinal
 {
     public class Solve
     {

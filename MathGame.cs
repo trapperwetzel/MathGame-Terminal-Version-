@@ -4,17 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MathGame
+namespace MathGameFinal
 {
     public class MainGame
     {
 
         public static void Menu(string Name, DateTime Date)
         {
-            // Menu
+            // Main Menu 
+
             Console.WriteLine($"Hello {Name}, The date is {Date}, Thank you so much for playing MathGame :-) ");
             Console.WriteLine("\n");
 
+            
+            // If user presses yes to another game, or is just starting the game, the isGameOn bool will be true.
+            // This bool is used to loop and have multiple games. 
             bool isGameOn = true;
 
             do
@@ -35,10 +39,11 @@ namespace MathGame
                 // Reads the users input, puts it in a variable.
                 var userchoice = Console.ReadLine();
 
+
                 switch (userchoice.Trim().ToLower())
                 {
                     case "v":
-                        Helpers.GetGames();
+                        Helpers.PrintGames();
                         break;
 
                     case "a":

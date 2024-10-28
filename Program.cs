@@ -6,7 +6,7 @@
 //
 
 using System;
-using MathGame;
+using MathGameFinal;
 
 var date = DateTime.UtcNow;
 var name = MenuMethods.GetName();
