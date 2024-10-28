@@ -8,4 +8,7 @@
 using System;
 using MathGame;
 
-MainGame.PlayGame();
+var date = DateTime.UtcNow;
+var name = MenuMethods.GetName();
+
+MainGame.Menu(name,date);
