@@ -8,63 +8,66 @@ namespace MathGame
 {
     public class MainGame
     {
+
         public static void Menu(string Name, DateTime Date)
-        { 
-          // Menu
+        {
+            // Menu
             Console.WriteLine($"Hello {Name}, The date is {Date}, Thank you so much for playing MathGame :-) ");
             Console.WriteLine("\n");
-            Console.WriteLine("-----------------------------------------------------------");
-            Console.WriteLine(" Please enter your choice out of the operators given below ");
-            Console.WriteLine("-----------------------------------------------------------");
-            Console.WriteLine("\n" +
-                "A - Addition\n" +
-                "S - Subtraction\n" +
-                "M - Multiplication\n" +
-                "D - Division\n" +
-                "Q - Quit Game\n");
 
+            bool isGameOn = true;
 
-            // Reads the users input, puts it in a variable.
-            var userchoice = Console.ReadLine();
-
-            switch (userchoice.Trim().ToLower())
+            do
             {
-                case "a":
-                    MenuMethods.AdditionGame("Addition Game Selected");
-                    break;
+                Console.Clear();
+                Console.WriteLine("-----------------------------------------------------------");
+                Console.WriteLine(" Please enter your choice out of the operators given below ");
+                Console.WriteLine("-----------------------------------------------------------");
+                Console.WriteLine("\n" +
+                    "A - Addition\n" +
+                    "S - Subtraction\n" +
+                    "M - Multiplication\n" +
+                    "D - Division\n" +
+                    "Q - Quit Game\n");
 
 
-                case "s":
-                    MenuMethods.SubtractionGame("Subtraction Game Selected");
-                    break;
+                // Reads the users input, puts it in a variable.
+                var userchoice = Console.ReadLine();
+
+                switch (userchoice.Trim().ToLower())
+                {
+                    case "a":
+                        MenuMethods.AdditionGame("Addition Game");
+                        break;
 
 
-                case "m":
-                    MenuMethods.MultiplicationGame("Multiplication Game Selected");
-                    break;
+                    case "s":
+                        MenuMethods.SubtractionGame("Subtraction Game");
+                        break;
 
 
-                case "d":
-                    MenuMethods.DivisionGame("Division Game Selected");
-                    break;
-                case "q":
-                    Console.WriteLine("Goodbye! Thank you for playing.");
-                    Environment.Exit(1);
-                    break;
-                default:
-                    Console.WriteLine("Invalid Input:");
-                    Environment.Exit(1);
-                    break;
+                    case "m":
+                        MenuMethods.MultiplicationGame("Multiplication Game");
+                        break;
+
+
+                    case "d":
+                        MenuMethods.DivisionGame("Division Game");
+                        break;
+                    case "q":
+                        Console.WriteLine("Goodbye! Thank you for playing.");
+                        isGameOn = false;
+                        Environment.Exit(1);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input:");
+                        break;
+                }
+               
             }
-
-           
-
-         
-          
-
-            
-            
+            while (isGameOn);
         }
         
     }
 }
+
